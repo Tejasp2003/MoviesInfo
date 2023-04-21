@@ -1,10 +1,23 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Results from "@/Components/Results";
+const API_KEY = process.env.API_KEY;
 
-const inter = Inter({ subsets: ['latin'] })
+export default async function Home({ searchParams }) {
+  const genre = searchParams.genre || "fetchTrending";
+  const res = await fetch(
+    `https://api.themoviedb.org/3/${
+      genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
+    }?api_key=${API_KEY}&language=en-US&page=1`, {next: {revalidate: 60*60*24}}
+  );
+  if(!res.ok){
+    throw new Error("Something went wrong");
+  }
 
-export default function Home() {
-  return (
-    <main>Hello all</main>
-  )
+  const data =  await res.json();
+
+  const results = data.results;
+  console.log(results);
+  return <div>
+    <Results results={results} />
+
+  </div>;
 }
