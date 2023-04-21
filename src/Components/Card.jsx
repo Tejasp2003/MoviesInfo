@@ -15,11 +15,12 @@ const Card = ({ result }) => {
           }`}
           width={500}
           height={300}
-          className="sm:rounded-t-lg hover:opacity-60 transition-opacity duration-200"
+          className="sm:rounded-t-lg hover:opacity-60 transition-opacity duration-200 object-cover h-32"
           style={
             {
                 maxWidth: "100%",
-                height: "auto",
+                maxHeight: "100%",
+                
             }
           }
           placeholder="blur"
