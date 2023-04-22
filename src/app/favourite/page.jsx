@@ -1,8 +1,14 @@
 import React from 'react'
+import Results from '@/Components/Results'
+
 
 function page() {
+
   return (
-    <div>page</div>
+    <div>
+       
+
+    </div>
   )
 }
 
