@@ -9,15 +9,15 @@ const Card = ({ result }) => {
   const [isFavourite, setIsFavourite] = useState(false);
 
   return (
-    <div className="cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200">
+    <div className="cursor-pointer p-1 mb-2 sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg border border-slate-400 sm:m-2 transition-shadow duration-200">
       <Link href={`/movie/${result.id}`}>
         <Image
           src={`https://image.tmdb.org/t/p/original/${
             result.backdrop_path || result.poster_path
           }`}
           width={500}
-          height={300}
-          className="sm:rounded-t-lg hover:opacity-60 transition-opacity duration-200 object-cover h-32"
+          height={500}
+          className="sm:rounded-t-lg hover:opacity-60 transition-opacity duration-200 rounded-xl h-60 object-cover"
           style={{
             maxWidth: "100%",
             maxHeight: "100%",
