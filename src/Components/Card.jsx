@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FiThumbsUp } from "react-icons/fi";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
+
 
 const Card = ({ result }) => {
   const [isFavourite, setIsFavourite] = useState(false);
@@ -37,23 +36,10 @@ const Card = ({ result }) => {
             <FiThumbsUp className="h-5 mr-1 ml-3" />
             {result.vote_count}
           </p>
-          {/* use heart icon for adding favourite */}
         </div>
       </Link>
 
-      <div className="flex items-center justify-end">
-        {isFavourite ? (
-          <AiFillHeart
-            className="h-6 text-red-500 mr-2 cursor-pointer"
-            onClick={() => setIsFavourite(!isFavourite)}
-          />
-        ) : (
-          <AiOutlineHeart
-            className="h-6 text-red-500 mr-2 cursor-pointer"
-            onClick={() => setIsFavourite(!isFavourite)}
-          />
-        )}
-      </div>
+
     </div>
   );
 };
